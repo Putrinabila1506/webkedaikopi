@@ -12,18 +12,34 @@ const searchForm = document.querySelector('.search-form');
 const searchBox = document.querySelector('#search-box');
 
 searchButton.addEventListener('click', function (e) {
-  e.preventDefault(); // Hindari reload/scroll
+  e.preventDefault(); // Hindari reload
   searchForm.classList.toggle('active');
   searchBox.focus();
 });
 
+// === TOMBOL SHOPPING CART ===
+const shoppingCartButton = document.getElementById('shopping-cart-button');
+const shoppingCart = document.querySelector('.shopping-cart');
+
+shoppingCartButton.addEventListener('click', function (e) {
+  e.preventDefault();
+  shoppingCart.classList.toggle('active');
+});
+
 // === TUTUP SEMUA SAAT KLIK DI LUAR ===
 document.addEventListener('click', function (e) {
+  // Tutup nav jika klik di luar hamburger dan nav
   if (!hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
     navbarNav.classList.remove('active');
   }
 
+  // Tutup search form jika klik di luar search
   if (!searchButton.contains(e.target) && !searchForm.contains(e.target)) {
     searchForm.classList.remove('active');
+  }
+
+  // Tutup shopping cart jika klik di luar tombol & cart
+  if (!shoppingCartButton.contains(e.target) && !shoppingCart.contains(e.target)) {
+    shoppingCart.classList.remove('active');
   }
 });
