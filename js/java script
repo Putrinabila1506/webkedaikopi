@@ -43,3 +43,13 @@ document.addEventListener('click', function (e) {
     shoppingCart.classList.remove('active');
   }
 });
+
+// Modal Box 
+const itemDetailModal = document.querySelector('#item-detail-modal');
+const itemDetailButtton =  document.querySelector('.item-detail-button');
+
+
+itemDetailButtton.onclick = (e) => {
+    itemDetailModal.style.display = 'flex';
+    e.preventDefault();
+};
