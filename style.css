@@ -180,8 +180,17 @@ body {
   background-size: cover;
   background-position: center;
   position: relative;
+  /* Prefix untuk Safari */
   -webkit-mask-image: linear-gradient(rgba(0,0,0,1) 85%, rgba(0,0,0,0));
+   /* Masking standar */
   mask-image: linear-gradient(rgba(0,0,0,1) 85%, rgba(0,0,0,0));
+
+  /* 
+    Perbedaan mask-image vs clip-path:
+    - mask-image: Bisa efek halus, transparan, gradasi, mendukung SVG/PNG.
+    - clip-path: Memotong elemen dengan bentuk tajam/geometris (circle, polygon).
+    - Gunakan mask-image untuk efek artistik, clip-path untuk potongan tegas.
+  */
 }
 
 
@@ -192,8 +201,10 @@ body {
   text-align: center;
   position: fixed;
   top: 150px;
-
 }
+
+
+
 
 .hero .content h1 {
   font-size: 5em;
